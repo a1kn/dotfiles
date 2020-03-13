@@ -42,11 +42,13 @@ set showmatch
 
 " allows cursor change in tmux mode
 if exists('$TMUX')
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  let &t_SI = "\ePtmux;\e\e[6 q\e\\"
+  let &t_SR = "\ePtmux;\e\e[4 q\e\\"
+  let &t_EI = "\ePtmux;\e\e[2 q\e\\"
 else
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  let &t_SI = "\<esc>[6 q"  " blinking I-beam in insert mode
+  let &t_SR = "\<esc>[4 q"  " blinking underline in replace mode
+  let &t_EI = "\<esc>[2 q"  " default cursor (usually blinking block) otherwise
 endif
 
 " configure backup files
@@ -59,10 +61,9 @@ let g:netrw_banner = 0
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 20
 
-" cursor settings
-let &t_SI = "\<esc>[6 q"  " blinking I-beam in insert mode
-let &t_SR = "\<esc>[4 q"  " blinking underline in replace mode
-let &t_EI = "\<esc>[2 q"  " default cursor (usually blinking block) otherwise
+" set text width 
+set textwidth=80
+:set colorcolumn=+1
 
 " vim-plugged
 call plug#begin()
