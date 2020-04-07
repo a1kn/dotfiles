@@ -13,11 +13,11 @@ Plug 'sjl/badwolf/'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'morhetz/gruvbox'
+Plug 'vim/killersheep'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
-colorscheme gruvbox 
+colorscheme badwolf 
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
