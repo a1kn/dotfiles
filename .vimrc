@@ -10,14 +10,17 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'sjl/badwolf/'
-Plug 'jiangmiao/auto-pairs'
+Plug 'rstacruz/vim-closer'
+Plug 'rstacruz/vim-hyperstyle'
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim/killersheep'
+Plug 'dracula/vim'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'morhetz/gruvbox'
 call plug#end()
 
-colorscheme badwolf 
+colorscheme dracula
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
