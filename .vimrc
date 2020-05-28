@@ -16,6 +16,8 @@ Plug 'ctrlpvim/ctrlp.vim' "fuzzy search
 Plug 'dracula/vim' "dracula scheme
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'} "completion
 Plug 'morhetz/gruvbox' "gruvbox scheme
+Plug 'Yggdroot/indentLine' "indent guides
+Plug 'mhinz/vim-startify' "fancy start screen
 call plug#end()
 
 " current colorscheme
@@ -79,3 +81,4 @@ let g:netrw_winsize = 20
 " set text width 
 set textwidth=80
 :set colorcolumn=+1
+
