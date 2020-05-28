@@ -1,4 +1,4 @@
-" vim-plugged install
+" Install vim-plugged
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -7,20 +7,19 @@ endif
 
 " vim-plugged plugins
 call plug#begin()
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-commentary'
-Plug 'sjl/badwolf/'
-Plug 'rstacruz/vim-closer'
-Plug 'rstacruz/vim-hyperstyle'
-Plug 'vim-airline/vim-airline'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim/killersheep'
-Plug 'dracula/vim'
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-sensible' "default settings
+Plug 'tpope/vim-commentary' "comment stuff out
+Plug 'rstacruz/vim-closer' "sensible auto-close
+Plug 'rstacruz/vim-hyperstyle' "css autocomplete
+Plug 'vim-airline/vim-airline' "airline status bar
+Plug 'ctrlpvim/ctrlp.vim' "fuzzy search
+Plug 'dracula/vim' "dracula scheme
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'} "completion
+Plug 'morhetz/gruvbox' "gruvbox scheme
 call plug#end()
 
-colorscheme dracula
+" current colorscheme
+colorscheme gruvbox
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
@@ -42,30 +41,19 @@ set background=dark
 " reopening a file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" Uncomment the following to have Vim load indentation rules and plugins
-" according to the detected filetype.
-filetype plugin indent on
-
-" The following are commented out as they cause vim to behave a lot
-" differently from regular Vi. They are highly recommended though.
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
-set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
 set hidden		" Hide buffers when they are abandoned
-"set mouse=a		" Enable mouse usage (all modes)
-
-set t_Co=256
-set number
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set cursorline
-set wildmenu
-set showmatch
-"set hlsearch
+set number " Line numbers
+set tabstop=2 "tab spaces
+set shiftwidth=2 " indenting
+set expandtab " use for autocompletion
+set cursorline " highlight current line
+set wildmenu " command completion
+set showmatch " shows matching opening/closing parentheses
 
 " allows cursor change in tmux mode
 if exists('$TMUX')
