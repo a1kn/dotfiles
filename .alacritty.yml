@@ -1,13 +1,13 @@
 font:
   normal: 
-    family: DejaVu Sans Mono 
+    family: Hack
     style: Regular 
   bold:
-    family: DejaVu Sans Mono 
+    family: Hack
     style: Bold
   italic:
-    family: DejaVu Sans Mono 
-    style: Oblique 
+    family: Hack
+    style: Italic
   size: 12.0
   offset: 
     x: 0 
