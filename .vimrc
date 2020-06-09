@@ -10,11 +10,10 @@ call plug#begin()
 Plug 'tpope/vim-sensible' "default settings
 Plug 'tpope/vim-commentary' "comment stuff out
 Plug 'rstacruz/vim-closer' "sensible auto-close
-Plug 'rstacruz/vim-hyperstyle' "css autocomplete
 Plug 'vim-airline/vim-airline' "airline status bar
 Plug 'ctrlpvim/ctrlp.vim' "fuzzy search
 Plug 'dracula/vim' "dracula scheme
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'} "completion
+Plug 'neoclide/coc.nvim' "completion
 Plug 'morhetz/gruvbox' "gruvbox scheme
 Plug 'Yggdroot/indentLine' "indent guides
 Plug 'mhinz/vim-startify' "fancy start screen
