@@ -17,6 +17,7 @@ Plug 'neoclide/coc.nvim' "completion
 Plug 'morhetz/gruvbox' "gruvbox scheme
 Plug 'Yggdroot/indentLine' "indent guides
 Plug 'mhinz/vim-startify' "fancy start screen
+Plug 'benmills/vimux' "vimux to run vim files in tmux
 call plug#end()
 
 " current colorscheme
@@ -81,3 +82,7 @@ let g:netrw_winsize = 20
 set textwidth=80
 :set colorcolumn=+1
 
+" vimux shortcuts
+map <Leader>r :VimuxPromptCommand<CR>
+map <Leader>l :VimuxRunLastCommand<CR>
+map <Leader>q :VimuxCloseRunner<CR>
