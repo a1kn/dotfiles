@@ -9,7 +9,7 @@ endif
 call plug#begin()
 Plug 'tpope/vim-sensible' "default settings
 Plug 'tpope/vim-commentary' "comment stuff out
-Plug 'rstacruz/vim-closer' "sensible auto-close
+Plug 'rstacruz/vim-closer' "sensible auto-close brackets
 Plug 'vim-airline/vim-airline' "airline status bar
 Plug 'ctrlpvim/ctrlp.vim' "fuzzy search
 Plug 'dracula/vim' "dracula scheme
@@ -57,7 +57,7 @@ set cursorline " highlight current line
 set wildmenu " command completion
 set showmatch " shows matching opening/closing parentheses
 
-" allows cursor change in tmux mode
+" cursor change when in insert mode
 if exists('$TMUX')
   let &t_SI = "\ePtmux;\e\e[6 q\e\\"
   let &t_SR = "\ePtmux;\e\e[4 q\e\\"
