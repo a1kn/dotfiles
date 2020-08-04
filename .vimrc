@@ -18,6 +18,7 @@ Plug 'morhetz/gruvbox' "gruvbox scheme
 Plug 'Yggdroot/indentLine' "indent guides
 Plug 'mhinz/vim-startify' "fancy start screen
 Plug 'benmills/vimux' "vimux to run vim files in tmux
+Plug 'preservim/nerdtree' "nerdtree
 call plug#end()
 
 " current colorscheme
@@ -86,3 +87,6 @@ set textwidth=80
 map <Leader>r :VimuxPromptCommand<CR>
 map <Leader>l :VimuxRunLastCommand<CR>
 map <Leader>q :VimuxCloseRunner<CR>
+
+" nerdtree config
+map <C-n> :NERDTreeToggle<CR>
