@@ -57,6 +57,10 @@ set expandtab " use for autocompletion
 set cursorline " highlight current line
 set wildmenu " command completion
 set showmatch " shows matching opening/closing parentheses
+set termguicolors "enable true colors
+
+" italicize comments
+highlight Comment cterm=italic gui=italic
 
 " cursor change when in insert mode
 if exists('$TMUX')
@@ -90,3 +94,11 @@ map <Leader>q :VimuxCloseRunner<CR>
 
 " nerdtree config
 map <C-n> :NERDTreeToggle<CR>
+
+" buffers
+let g:airline#extensions#tabline#enabled = 1
+nmap <C-t> :enew<CR>
+nmap <C-l> :bnext<CR>
+nmap <C-h> :bprevious<CR>
+nmap <C-w> :bp <BAR> bd #<CR>
+
