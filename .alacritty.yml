@@ -1,14 +1,18 @@
 font:
   normal: 
-    family: Hack
-    style: Regular 
+    family: "Operator Mono" # alternatively: Hack
+    style: Medium
   bold:
-    family: Hack
+    family: "Operator Mono"
     style: Bold
   italic:
-    family: Hack
+    family: "Operator Mono"
     style: Italic
-  size: 12.0
+  bold_italic:
+    family: "Hack"
+    style: Bold Italic
+
+  size: 18.0
   offset: 
     x: 0 
     y: 3
@@ -16,7 +20,6 @@ font:
 draw_bold_text_with_bright_colors: true
 live_config_reload: true
 background_opacity: 0.9
-
 
 colors:
   # Default colors
@@ -66,3 +69,10 @@ colors:
     magenta: '#6e4962'
     cyan:    '#5c8482'
     white:   '#828282'
+
+key_bindings:
+  - { key: Key0, mods: Control, action: ResetFontSize }
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+  - { key: Add, mods: Control, action: IncreaseFontSize }
+  - { key: Subtract, mods: Control, action: DecreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
