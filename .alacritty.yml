@@ -1,16 +1,16 @@
 font:
   normal: 
     family: "Operator Mono" # alternatively: Hack
-    style: Medium
+    style: Book
   bold:
     family: "Operator Mono"
-    style: Bold
+    style: Medium
   italic:
     family: "Operator Mono"
-    style: Italic
+    style: Book Italic
   bold_italic:
     family: "Hack"
-    style: Bold Italic
+    style: Medium Italic
 
   size: 18.0
   offset: 
