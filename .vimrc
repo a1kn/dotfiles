@@ -25,7 +25,8 @@ Plug 'maxmellon/vim-jsx-pretty' "jsx syntax
 call plug#end()
 
 " current colorscheme
-colorscheme OceanicNext
+let g:gruvbox_italic=1
+colorscheme gruvbox
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
@@ -102,9 +103,6 @@ map <Leader>q :VimuxCloseRunner<CR>
 
 " nerdtree config
 map <C-n> :NERDTreeToggle<CR>
-
-" airline theme
-let g:airline_theme='oceanicnext'
 
 " buffers
 let g:airline#extensions#tabline#enabled = 1
