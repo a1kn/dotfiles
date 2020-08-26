@@ -11,18 +11,21 @@ Plug 'tpope/vim-sensible' "default settings
 Plug 'tpope/vim-commentary' "comment stuff out
 Plug 'rstacruz/vim-closer' "sensible auto-close brackets
 Plug 'vim-airline/vim-airline' "airline status bar
-Plug 'ctrlpvim/ctrlp.vim' "fuzzy search
-Plug 'dracula/vim' "dracula scheme
+Plug 'junegunn/fzf' "fuzzy search
+Plug 'junegunn/fzf.vim' "fuzzy search
 Plug 'neoclide/coc.nvim' "completion
 Plug 'morhetz/gruvbox' "gruvbox scheme
+Plug 'mhartington/oceanic-next' "oceanic next colorscheme
 Plug 'Yggdroot/indentLine' "indent guides
 Plug 'mhinz/vim-startify' "fancy start screen
 Plug 'benmills/vimux' "vimux to run vim files in tmux
 Plug 'preservim/nerdtree' "nerdtree
+Plug 'yuezk/vim-js' "js syntax
+Plug 'maxmellon/vim-jsx-pretty' "jsx syntax
 call plug#end()
 
 " current colorscheme
-colorscheme gruvbox
+colorscheme OceanicNext
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
@@ -35,6 +38,9 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" fzf config
+nmap <silent> <C-p> :Files<CR>
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
@@ -59,8 +65,10 @@ set wildmenu " command completion
 set showmatch " shows matching opening/closing parentheses
 set termguicolors "enable true colors
 
-" italicize comments
+" italicize stuff
 highlight Comment cterm=italic gui=italic
+highlight htmlArg cterm=italic gui=italic
+highlight Type cterm=italic gui=italic
 
 " cursor change when in insert mode
 if exists('$TMUX')
@@ -95,10 +103,12 @@ map <Leader>q :VimuxCloseRunner<CR>
 " nerdtree config
 map <C-n> :NERDTreeToggle<CR>
 
+" airline theme
+let g:airline_theme='oceanicnext'
+
 " buffers
 let g:airline#extensions#tabline#enabled = 1
 nmap <C-t> :enew<CR>
 nmap <C-l> :bnext<CR>
 nmap <C-h> :bprevious<CR>
 nmap <C-w> :bp <BAR> bd #<CR>
-
