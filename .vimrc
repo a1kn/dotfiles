@@ -18,7 +18,6 @@ Plug 'morhetz/gruvbox' "gruvbox scheme
 Plug 'mhartington/oceanic-next' "oceanic next colorscheme
 Plug 'Yggdroot/indentLine' "indent guides
 Plug 'mhinz/vim-startify' "fancy start screen
-Plug 'benmills/vimux' "vimux to run vim files in tmux
 Plug 'preservim/nerdtree' "nerdtree
 Plug 'yuezk/vim-js' "js syntax
 Plug 'maxmellon/vim-jsx-pretty' "jsx syntax
@@ -27,6 +26,14 @@ call plug#end()
 " current colorscheme
 let g:gruvbox_italic=1
 colorscheme gruvbox
+
+" Coc Config
+
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
@@ -51,7 +58,6 @@ set background=dark
 " reopening a file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
@@ -62,8 +68,6 @@ set tabstop=2 "tab spaces
 set shiftwidth=2 " indenting
 set expandtab " use for autocompletion
 set cursorline " highlight current line
-set wildmenu " command completion
-set showmatch " shows matching opening/closing parentheses
 set termguicolors "enable true colors
 
 " italicize stuff
@@ -87,19 +91,9 @@ set backup                    " keep a backup file
 set backupdir=~/.vim/ " store backups here
 set directory=~/.vim/ " store swap files here
 
-" netrw config
-let g:netrw_banner = 0
-let g:netrw_browse_split = 4
-let g:netrw_winsize = 20
-
 " set text width 
 set textwidth=80
 :set colorcolumn=+1
-
-" vimux shortcuts
-map <Leader>r :VimuxPromptCommand<CR>
-map <Leader>l :VimuxRunLastCommand<CR>
-map <Leader>q :VimuxCloseRunner<CR>
 
 " nerdtree config
 map <C-n> :NERDTreeToggle<CR>
