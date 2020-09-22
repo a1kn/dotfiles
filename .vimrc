@@ -25,7 +25,6 @@ call plug#end()
 let g:gruvbox_italic=1
 colorscheme gruvbox
 
-" Coc Config
 
 set cmdheight=2
 set updatetime=300
