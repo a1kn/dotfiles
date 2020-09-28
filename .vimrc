@@ -21,6 +21,7 @@ Plug 'mhinz/vim-startify' "fancy start screen
 Plug 'preservim/nerdtree' "nerdtree
 Plug 'yuezk/vim-js' "js syntax
 Plug 'maxmellon/vim-jsx-pretty' "jsx syntax
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' } "prettier
 call plug#end()
 
 " current colorscheme
