@@ -7,6 +7,7 @@ endif
 
 " vim-plugged plugins
 call plug#begin()
+Plug 'tpope/vim-sensible' "sensible defaults
 Plug 'tpope/vim-commentary' "comment stuff out
 Plug 'rstacruz/vim-closer' "sensible auto-close brackets
 Plug 'vim-airline/vim-airline' "airline status bar
@@ -27,78 +28,41 @@ let g:gruvbox_italic=1
 colorscheme gruvbox
 
 
-" Give more space for displaying messages.
+" COC
 set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
 set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-" Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
 augroup mygroup
   autocmd!
-  " Setup formatexpr specified filetype(s).
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
-
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying codeAction to the current buffer.
 nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
-
-" NeoVim-only mapping for visual mode scroll
-" Useful on signatureHelp after jump placeholder of snippet expansion
 if has('nvim')
   vnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#nvim_scroll(1, 1) : "\<C-f>"
   vnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#nvim_scroll(0, 1) : "\<C-b>"
 endif
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " fzf config
 nmap <silent> <C-p> :Files<CR>
 
-" If using a dark background within the editing area and syntax highlighting
-" turn on this option as well
-set background=dark
-
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
+" have Vim jump to the last position when reopening a file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+set background=dark " background
 set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
@@ -110,6 +74,11 @@ set shiftwidth=2 " indenting
 set expandtab " use for autocompletion
 set cursorline " highlight current line
 set termguicolors "enable true colors
+set timeoutlen=1000 ttimeoutlen=0
+
+" search
+set hlsearch
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " italicize stuff
 highlight Comment cterm=italic gui=italic
@@ -145,3 +114,9 @@ nmap <C-t> :enew<CR>
 nmap <C-l> :bnext<CR>
 nmap <C-h> :bprevious<CR>
 nmap <C-w> :bp <BAR> bd #<CR>
+
+" split nav
+nnoremap <C-J> <C-W><C-J>
+
+" enable mouse
+set mouse=a
